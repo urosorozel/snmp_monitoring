@@ -1,0 +1,2317 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+dell:
+  walk:
+  - 1.3.6.1.4.1.674.10892.5.2
+  - 1.3.6.1.4.1.674.10892.5.4.1100.30
+  - 1.3.6.1.4.1.674.10892.5.4.1100.50.1.14
+  - 1.3.6.1.4.1.674.10892.5.4.200
+  - 1.3.6.1.4.1.674.10892.5.4.600.12.1
+  - 1.3.6.1.4.1.674.10892.5.4.600.30.1.6
+  - 1.3.6.1.4.1.674.10892.5.4.700.20.1
+  - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.11
+  - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.24
+  - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.55
+  - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.6
+  - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.7
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.4.1.674.10892.5.4.300.50.1.5.1.1
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: globalSystemStatus
+    oid: 1.3.6.1.4.1.674.10892.5.2.1
+    type: gauge
+    help: This attribute defines the overall rollup status of all components in the
+      system being monitored by the remote access card - 1.3.6.1.4.1.674.10892.5.2.1
+  - name: systemLCDStatus
+    oid: 1.3.6.1.4.1.674.10892.5.2.2
+    type: gauge
+    help: This attribute defines the system status as it is reflected by the LCD front
+      panel - 1.3.6.1.4.1.674.10892.5.2.2
+  - name: globalStorageStatus
+    oid: 1.3.6.1.4.1.674.10892.5.2.3
+    type: gauge
+    help: This attribute defines the overall storage status being monitored by the
+      remote access card. - 1.3.6.1.4.1.674.10892.5.2.3
+  - name: systemPowerState
+    oid: 1.3.6.1.4.1.674.10892.5.2.4
+    type: gauge
+    help: This attribute defines the power state of the system. - 1.3.6.1.4.1.674.10892.5.2.4
+  - name: systemPowerUpTime
+    oid: 1.3.6.1.4.1.674.10892.5.2.5
+    type: gauge
+    help: This attribute defines the power-up time of the system in seconds. - 1.3.6.1.4.1.674.10892.5.2.5
+  - name: processorDevicechassisIndex
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.1
+    type: gauge
+    help: 1100.0030.0001.0001 This attribute defines the index (one based) of the
+      associated system chassis. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.1
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceIndex
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.2
+    type: gauge
+    help: 1100.0030.0001.0002 This attribute defines the index (one based) of the
+      processor device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.2
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceStateCapabilities
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.3
+    type: gauge
+    help: 1100.0030.0001.0003 This attribute defines the state capabilities of the
+      processor device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.3
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceStateSettings
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.4
+    type: gauge
+    help: 1100.0030.0001.0004 This attribute defines the state settings of the processor
+      device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.4
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceStatus
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.5
+    type: gauge
+    help: 1100.0030.0001.0005 This attribute defines the status of the processor device.
+      - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.5
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceType
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.7
+    type: gauge
+    help: 1100.0030.0001.0007 This attribute defines the type of the processor device.
+      - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.7
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceManufacturerName
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.8
+    type: OctetString
+    help: 1100.0030.0001.0008 This attribute defines the name of the manufacturer
+      of the processor device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.8
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceStatusState
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.9
+    type: gauge
+    help: 1100.0030.0001.0009 This attribute defines the status state of the processor
+      device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.9
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceFamily
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.10
+    type: gauge
+    help: 1100.0030.0001.0010 This attribute defines the family of the processor device.
+      - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.10
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceMaximumSpeed
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.11
+    type: gauge
+    help: 1100.0030.0001.0011 This attribute defines the maximum speed of the processor
+      device in MHz - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.11
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceCurrentSpeed
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.12
+    type: gauge
+    help: 1100.0030.0001.0012 This attribute defines the current speed of the processor
+      device in MHz - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.12
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceExternalClockSpeed
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.13
+    type: gauge
+    help: 1100.0030.0001.0013 This attribute defines the speed of the external clock
+      for the processor device in MHz - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.13
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceVoltage
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.14
+    type: gauge
+    help: 1100.0030.0001.0014 This attribute defines the voltage powering the processor
+      device in millivolts - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.14
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceVersionName
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.16
+    type: OctetString
+    help: 1100.0030.0001.0016 This attribute defines the version of the processor
+      device - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.16
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceCoreCount
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.17
+    type: gauge
+    help: 1100.0030.0001.0017 This attribute defines the number of processor cores
+      detected for the processor device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.17
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceCoreEnabledCount
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.18
+    type: gauge
+    help: 1100.0030.0001.0018 This attribute defines the number of processor cores
+      enabled for the processor device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.18
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceThreadCount
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.19
+    type: gauge
+    help: 1100.0030.0001.0019 This attribute defines the number of processor threads
+      detected for the processor device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.19
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceCharacteristics
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.20
+    type: gauge
+    help: 1100.0030.0001.0020 This attribute defines characteristics of the processor
+      device - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.20
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceExtendedCapabilities
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.21
+    type: gauge
+    help: 1100.0030.0001.0021 This attribute defines extended capabilities of the
+      processor device - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.21
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceExtendedSettings
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.22
+    type: gauge
+    help: 1100.0030.0001.0022 This attribute defines extended settings of the processor
+      device - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.22
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceBrandName
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.23
+    type: OctetString
+    help: 1100.0030.0001.0023 This attribute defines the brand of the processor device.
+      - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.23
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: processorDeviceFQDD
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.30.1.26
+    type: OctetString
+    help: 1100.0030.0001.0026 Fully qualified device descriptor (FQDD) of the processor
+      device. - 1.3.6.1.4.1.674.10892.5.4.1100.30.1.26
+    indexes:
+    - labelname: processorDevicechassisIndex
+      type: gauge
+    - labelname: processorDeviceIndex
+      type: gauge
+  - name: memoryDeviceSize
+    oid: 1.3.6.1.4.1.674.10892.5.4.1100.50.1.14
+    type: gauge
+    help: 1100.0050.0001.0014 This attribute defines the size in KBytes of the memory
+      device - 1.3.6.1.4.1.674.10892.5.4.1100.50.1.14
+    indexes:
+    - labelname: memoryDevicechassisIndex
+      type: gauge
+    - labelname: memoryDeviceIndex
+      type: gauge
+  - name: systemStatechassisIndex
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.1
+    type: gauge
+    help: 0200.0010.0001.0001 This attribute defines the index (one based) of this
+      system chassis. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.1
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateGlobalSystemStatus
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.2
+    type: gauge
+    help: 0200.0010.0001.0002 This attribute defines the global system status of all
+      system chassis being monitored by the systems management software. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.2
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateChassisState
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.3
+    type: gauge
+    help: 0200.0010.0001.0003 This attribute defines the state settings of this system
+      chassis. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.3
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateChassisStatus
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.4
+    type: gauge
+    help: 0200.0010.0001.0004 This attribute defines the status of this system chassis.
+      - 1.3.6.1.4.1.674.10892.5.4.200.10.1.4
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStatePowerUnitStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.5
+    type: OctetString
+    help: 0200.0010.0001.0005 This attribute lists the state settings of each power
+      unit of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.5
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStatePowerUnitStatusRedundancy
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.6
+    type: gauge
+    help: 0200.0010.0001.0006 This attribute defines the combined redundancy status
+      of all power units of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.6
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStatePowerUnitStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.7
+    type: OctetString
+    help: 0200.0010.0001.0007 This attribute lists the redundancy status of each power
+      unit of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.7
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStatePowerSupplyStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.8
+    type: OctetString
+    help: 0200.0010.0001.0008 This attribute lists the state settings of each power
+      supply of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.8
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStatePowerSupplyStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.9
+    type: gauge
+    help: 0200.0010.0001.0009 This attribute defines the combined status of all power
+      supplies of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.9
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStatePowerSupplyStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.10
+    type: OctetString
+    help: 0200.0010.0001.0010 This attribute lists the status of each power supply
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.10
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateVoltageStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.11
+    type: OctetString
+    help: 0200.0010.0001.0011 This attribute lists the state settings of each voltage
+      probe of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.11
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateVoltageStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.12
+    type: gauge
+    help: 0200.0010.0001.0012 This attribute defines the combined status of all voltage
+      probes of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.12
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateVoltageStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.13
+    type: OctetString
+    help: 0200.0010.0001.0013 This attribute lists the status of each voltage probe
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.13
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateAmperageStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.14
+    type: OctetString
+    help: 0200.0010.0001.0014 This attribute lists the state settings of each amperage
+      probe of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.14
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateAmperageStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.15
+    type: gauge
+    help: 0200.0010.0001.0015 This attribute defines the combined status of all amperage
+      probes of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.15
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateAmperageStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.16
+    type: OctetString
+    help: 0200.0010.0001.0016 This attribute lists the status of each amperage probe
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.16
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCoolingUnitStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.17
+    type: OctetString
+    help: 0200.0010.0001.0017 This attribute lists the state settings of each cooling
+      unit of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.17
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCoolingUnitStatusRedundancy
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.18
+    type: gauge
+    help: 0200.0010.0001.0018 This attribute defines the combined redundancy status
+      of all cooling units of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.18
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCoolingUnitStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.19
+    type: OctetString
+    help: 0200.0010.0001.0019 This attribute lists the redundancy status of each cooling
+      unit of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.19
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCoolingDeviceStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.20
+    type: OctetString
+    help: 0200.0010.0001.0020 This attribute lists the state settings of each cooling
+      device of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.20
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCoolingDeviceStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.21
+    type: gauge
+    help: 0200.0010.0001.0021 This attribute defines the combined status of all cooling
+      devices of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.21
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCoolingDeviceStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.22
+    type: OctetString
+    help: 0200.0010.0001.0022 This attribute lists the status of each cooling device
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.22
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateTemperatureStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.23
+    type: OctetString
+    help: 0200.0010.0001.0023 This attribute lists the state settings of each temperature
+      probe of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.23
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateTemperatureStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.24
+    type: gauge
+    help: 0200.0010.0001.0024 This attribute defines the combined status of all temperature
+      probes of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.24
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateTemperatureStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.25
+    type: OctetString
+    help: 0200.0010.0001.0025 This attribute lists the status of each temperature
+      probe of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.25
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateMemoryDeviceStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.26
+    type: OctetString
+    help: 0200.0010.0001.0026 This attribute lists the state settings of each memory
+      device of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.26
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateMemoryDeviceStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.27
+    type: gauge
+    help: 0200.0010.0001.0027 This attribute defines the combined status of all memory
+      devices of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.27
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateMemoryDeviceStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.28
+    type: OctetString
+    help: 0200.0010.0001.0028 This attribute lists the status of each memory device
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.28
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateChassisIntrusionStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.29
+    type: OctetString
+    help: 0200.0010.0001.0029 This attribute lists the state settings of each intrusion
+      detection device of this system chassis - 1.3.6.1.4.1.674.10892.5.4.200.10.1.29
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateChassisIntrusionStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.30
+    type: gauge
+    help: 0200.0010.0001.0030 This attribute defines the combined status of all intrusion
+      detection devices of this system chassis. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.30
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateChassisIntrusionStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.31
+    type: OctetString
+    help: 0200.0010.0001.0031 This attribute lists the status of each intrusion detection
+      device of this system chassis - 1.3.6.1.4.1.674.10892.5.4.200.10.1.31
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStatePowerUnitStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.42
+    type: gauge
+    help: 0200.0010.0001.0042 This attribute defines the combined status of all power
+      units of this chassis. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.42
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStatePowerUnitStatusList
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.43
+    type: OctetString
+    help: 0200.0010.0001.0043 This attribute lists the status of each power unit of
+      this chassis - 1.3.6.1.4.1.674.10892.5.4.200.10.1.43
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCoolingUnitStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.44
+    type: gauge
+    help: 0200.0010.0001.0044 This attribute defines the combined status of all cooling
+      units of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.44
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCoolingUnitStatusList
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.45
+    type: OctetString
+    help: 0200.0010.0001.0045 This attribute lists the status of each cooling unit
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.45
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateProcessorDeviceStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.50
+    type: gauge
+    help: 0200.0010.0001.0050 This attribute defines the combined status of all processor
+      devices of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.50
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateProcessorDeviceStatusList
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.51
+    type: OctetString
+    help: 0200.0010.0001.0051 This attribute lists the status of each processor device
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.51
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateBatteryStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.52
+    type: gauge
+    help: 0200.0010.0001.0052 This attribute defines the combined status of all batteries
+      of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.52
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateBatteryStatusList
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.53
+    type: OctetString
+    help: 0200.0010.0001.0053 This attribute lists the status of each battery of this
+      system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.53
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateSDCardUnitStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.54
+    type: gauge
+    help: 0200.0010.0001.0054 This attribute defines the combined status of all SD
+      Card units of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.54
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateSDCardUnitStatusList
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.55
+    type: OctetString
+    help: 0200.0010.0001.0055 This attribute lists the status of each SD Card unit
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.55
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateSDCardDeviceStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.56
+    type: gauge
+    help: 0200.0010.0001.0056 This attribute defines the combined status of all SD
+      Card devices of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.56
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateSDCardDeviceStatusList
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.57
+    type: OctetString
+    help: 0200.0010.0001.0057 This attribute lists the status of each SD Card device
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.57
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateIDSDMCardUnitStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.58
+    type: gauge
+    help: 0200.0010.0001.0058 This attribute defines the combined status of all IDSDM
+      Card units of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.58
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateIDSDMCardUnitStatusList
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.59
+    type: OctetString
+    help: 0200.0010.0001.0059 This attribute lists the status of each IDSDM Card unit
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.59
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateIDSDMCardDeviceStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.60
+    type: gauge
+    help: 0200.0010.0001.0060 This attribute defines the combined status of all IDSDM
+      Card devices of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.60
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateIDSDMCardDeviceStatusList
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.61
+    type: OctetString
+    help: 0200.0010.0001.0061 This attribute lists the status of each IDSDM Card device
+      of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.61
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateTemperatureStatisticsStateDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.62
+    type: OctetString
+    help: 0200.0010.0001.0062 This attribute lists the state settings of each temperature
+      statistics object of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.62
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateTemperatureStatisticsStatusCombined
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.63
+    type: gauge
+    help: 0200.0010.0001.0063 This attribute defines the combined status of all temperature
+      statistics objects of this system. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.63
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateTemperatureStatisticsStatusDetails
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.64
+    type: OctetString
+    help: 0200.0010.0001.0064 This attribute lists the status of each temperature
+      statistics object of this system - 1.3.6.1.4.1.674.10892.5.4.200.10.1.64
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemStateCMCStatus
+    oid: 1.3.6.1.4.1.674.10892.5.4.200.10.1.65
+    type: gauge
+    help: 0200.0010.0001.0065 This attribute defines the status of CMC. - 1.3.6.1.4.1.674.10892.5.4.200.10.1.65
+    indexes:
+    - labelname: systemStatechassisIndex
+      type: gauge
+  - name: systemBIOSStatus
+    oid: 1.3.6.1.4.1.674.10892.5.4.300.50.1.5
+    type: gauge
+    help: 0300.0050.0001.0005 This attribute defines the status of the system BIOS.
+      - 1.3.6.1.4.1.674.10892.5.4.300.50.1.5
+    indexes:
+    - labelname: systemBIOSchassisIndex
+      type: gauge
+    - labelname: systemBIOSIndex
+      type: gauge
+  - name: powerSupplychassisIndex
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.1
+    type: gauge
+    help: 0600.0012.0001.0001 This attribute defines the index (one based) of the
+      system chassis. - 1.3.6.1.4.1.674.10892.5.4.600.12.1.1
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyIndex
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.2
+    type: gauge
+    help: 0600.0012.0001.0002 This attribute defines the index (one based) of the
+      power supply. - 1.3.6.1.4.1.674.10892.5.4.600.12.1.2
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyStateCapabilitiesUnique
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.3
+    type: gauge
+    help: 0600.0012.0001.0003 This attribute defines the state capabilities of the
+      power supply. - 1.3.6.1.4.1.674.10892.5.4.600.12.1.3
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyStateSettingsUnique
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.4
+    type: gauge
+    help: 0600.0012.0001.0004 This attribute defines the state settings of the power
+      supply. - 1.3.6.1.4.1.674.10892.5.4.600.12.1.4
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyStatus
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.5
+    type: gauge
+    help: 0600.0012.0001.0005 This attribute defines the status of the power supply.
+      - 1.3.6.1.4.1.674.10892.5.4.600.12.1.5
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyOutputWatts
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.6
+    type: gauge
+    help: 0600.0012.0001.0006 This attribute defines the maximum sustained output
+      wattage of the power supply (in tenths of Watts). - 1.3.6.1.4.1.674.10892.5.4.600.12.1.6
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyType
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.7
+    type: gauge
+    help: 0600.0012.0001.0007 This attribute defines the type of the power supply.
+      - 1.3.6.1.4.1.674.10892.5.4.600.12.1.7
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyLocationName
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.8
+    type: OctetString
+    help: 0600.0012.0001.0008 This attribute defines the location of the power supply.
+      - 1.3.6.1.4.1.674.10892.5.4.600.12.1.8
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyMaximumInputVoltage
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.9
+    type: gauge
+    help: 0600.0012.0001.0009 This attribute defines the maximum input voltage of
+      the power supply (in Volts). - 1.3.6.1.4.1.674.10892.5.4.600.12.1.9
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplypowerUnitIndexReference
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.10
+    type: gauge
+    help: 0600.0012.0001.0010 This attribute defines the index to the associated power
+      unit if the power supply is part of a power unit. - 1.3.6.1.4.1.674.10892.5.4.600.12.1.10
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplySensorState
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.11
+    type: gauge
+    help: 0600.0012.0001.0011 This attribute defines the state reported by the power
+      supply sensor - 1.3.6.1.4.1.674.10892.5.4.600.12.1.11
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyConfigurationErrorType
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.12
+    type: gauge
+    help: 0600.0012.0001.0012 This attribute defines the type of configuration error
+      reported by the power supply sensor - 1.3.6.1.4.1.674.10892.5.4.600.12.1.12
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyPowerMonitorCapable
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.13
+    type: gauge
+    help: 0600.0012.0001.0013 This attribute defines a boolean value that reports
+      whether the power supply is capable of monitoring power consumption. - 1.3.6.1.4.1.674.10892.5.4.600.12.1.13
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyRatedInputWattage
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.14
+    type: gauge
+    help: 0600.0012.0001.0014 This attribute defines the rated input wattage of the
+      power supply (in tenths of Watts). - 1.3.6.1.4.1.674.10892.5.4.600.12.1.14
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyFQDD
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.15
+    type: OctetString
+    help: 0600.0012.0001.0015 Fully qualified device descriptor (FQDD) of the power
+      supply. - 1.3.6.1.4.1.674.10892.5.4.600.12.1.15
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyCurrentInputVoltage
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.12.1.16
+    type: gauge
+    help: 0600.0012.0001.0016 This attribute defines the current input voltage to
+      the power supply (in Volts). - 1.3.6.1.4.1.674.10892.5.4.600.12.1.16
+    indexes:
+    - labelname: powerSupplychassisIndex
+      type: gauge
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: amperageProbeReading
+    oid: 1.3.6.1.4.1.674.10892.5.4.600.30.1.6
+    type: gauge
+    help: 0600.0030.0001.0006 This attribute defines the reading for an amperage probe
+      of type other than amperageProbeTypeIsDiscrete - 1.3.6.1.4.1.674.10892.5.4.600.30.1.6
+    indexes:
+    - labelname: amperageProbechassisIndex
+      type: gauge
+    - labelname: amperageProbeIndex
+      type: gauge
+  - name: temperatureProbechassisIndex
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.1
+    type: gauge
+    help: 0700.0020.0001.0001 This attribute defines the index (one based) of the
+      associated system chassis. - 1.3.6.1.4.1.674.10892.5.4.700.20.1.1
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeIndex
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.2
+    type: gauge
+    help: 0700.0020.0001.0002 This attribute defines the index (one based) of the
+      temperature probe. - 1.3.6.1.4.1.674.10892.5.4.700.20.1.2
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeStateCapabilities
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.3
+    type: gauge
+    help: 0700.0020.0001.0003 This attribute defines the state capabilities of the
+      temperature probe. - 1.3.6.1.4.1.674.10892.5.4.700.20.1.3
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeStateSettings
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.4
+    type: gauge
+    help: 0700.0020.0001.0004 This attribute defines the state settings of the temperature
+      probe. - 1.3.6.1.4.1.674.10892.5.4.700.20.1.4
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeStatus
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.5
+    type: gauge
+    help: 0700.0020.0001.0005 This attribute defines the probe status of the temperature
+      probe. - 1.3.6.1.4.1.674.10892.5.4.700.20.1.5
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeReading
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.6
+    type: gauge
+    help: 0700.0020.0001.0006 This attribute defines the reading for a temperature
+      probe of type other than temperatureProbeTypeIsDiscrete - 1.3.6.1.4.1.674.10892.5.4.700.20.1.6
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeType
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.7
+    type: gauge
+    help: 0700.0020.0001.0007 This attribute defines the type of the temperature probe.
+      - 1.3.6.1.4.1.674.10892.5.4.700.20.1.7
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeLocationName
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.8
+    type: DisplayString
+    help: 0700.0020.0001.0008 This attribute defines the location name of the temperature
+      probe. - 1.3.6.1.4.1.674.10892.5.4.700.20.1.8
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeUpperNonRecoverableThreshold
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.9
+    type: gauge
+    help: 0700.0020.0001.0009 This attribute defines the upper nonrecoverable threshold
+      of the temperature probe - 1.3.6.1.4.1.674.10892.5.4.700.20.1.9
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeUpperCriticalThreshold
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.10
+    type: gauge
+    help: 0700.0020.0001.0010 This attribute defines the upper critical threshold
+      of the temperature probe - 1.3.6.1.4.1.674.10892.5.4.700.20.1.10
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeUpperNonCriticalThreshold
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.11
+    type: gauge
+    help: 0700.0020.0001.0011 This attribute defines the upper noncritical threshold
+      of the temperature probe - 1.3.6.1.4.1.674.10892.5.4.700.20.1.11
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeLowerNonCriticalThreshold
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.12
+    type: gauge
+    help: 0700.0020.0001.0012 This attribute defines the lower noncritical threshold
+      of the temperature probe - 1.3.6.1.4.1.674.10892.5.4.700.20.1.12
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeLowerCriticalThreshold
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.13
+    type: gauge
+    help: 0700.0020.0001.0013 This attribute defines the lower critical threshold
+      of the temperature probe - 1.3.6.1.4.1.674.10892.5.4.700.20.1.13
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeLowerNonRecoverableThreshold
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.14
+    type: gauge
+    help: 0700.0020.0001.0014 This attribute defines the lower nonrecoverable threshold
+      of the temperature probe - 1.3.6.1.4.1.674.10892.5.4.700.20.1.14
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeProbeCapabilities
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.15
+    type: gauge
+    help: 0700.0020.0001.0015 This attribute defines the probe capabilities of the
+      temperature probe. - 1.3.6.1.4.1.674.10892.5.4.700.20.1.15
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: temperatureProbeDiscreteReading
+    oid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.16
+    type: gauge
+    help: 0700.0020.0001.0016 This attribute defines the reading for a temperature
+      probe of type temperatureProbeTypeIsDiscrete - 1.3.6.1.4.1.674.10892.5.4.700.20.1.16
+    indexes:
+    - labelname: temperatureProbechassisIndex
+      type: gauge
+    - labelname: temperatureProbeIndex
+      type: gauge
+  - name: physicalDiskCapacityInMB
+    oid: 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.11
+    type: gauge
+    help: The size of the physical disk in megabytes. - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.11
+    indexes:
+    - labelname: physicalDiskNumber
+      type: gauge
+  - name: physicalDiskComponentStatus
+    oid: 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.24
+    type: gauge
+    help: The status of the physical disk itself without the propagation of any contained
+      component status - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.24
+    indexes:
+    - labelname: physicalDiskNumber
+      type: gauge
+  - name: physicalDiskDisplayName
+    oid: 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.55
+    type: DisplayString
+    help: The physical disk's friendly FQDD as represented in Storage Management.
+      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.55
+    indexes:
+    - labelname: physicalDiskNumber
+      type: gauge
+  - name: physicalDiskProductID
+    oid: 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.6
+    type: DisplayString
+    help: The model number of the physical disk. - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.6
+    indexes:
+    - labelname: physicalDiskNumber
+      type: gauge
+  - name: physicalDiskSerialNo
+    oid: 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.7
+    type: DisplayString
+    help: The physical disk's unique identification number from the manufacturer.
+      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.7
+    indexes:
+    - labelname: physicalDiskNumber
+      type: gauge
+  version: 2
+  auth:
+    community: public
+hpe:
+  walk:
+  - 1.3.6.1.4.1.232.1.2.2.1.1
+  - 1.3.6.1.4.1.232.3.2.5.1.1
+  - 1.3.6.1.4.1.232.6.2.14.13.1.6
+  - 1.3.6.1.4.1.232.6.2.15
+  - 1.3.6.1.4.1.232.6.2.16
+  - 1.3.6.1.4.1.232.6.2.6.8.1
+  - 1.3.6.1.4.1.232.6.2.9
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.4.1.232.9.2.2.32.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: cpqSeCpuUnitIndex
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.1
+    type: gauge
+    help: This is a number that uniquely specifies a processor unit - 1.3.6.1.4.1.232.1.2.2.1.1.1
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuSlot
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.2
+    type: gauge
+    help: This value represents this processor`s slot - 1.3.6.1.4.1.232.1.2.2.1.1.2
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuName
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.3
+    type: DisplayString
+    help: The name of this processor - 1.3.6.1.4.1.232.1.2.2.1.1.3
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuSpeed
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.4
+    type: gauge
+    help: The current internal speed of this processor in megahertz - 1.3.6.1.4.1.232.1.2.2.1.1.4
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuStep
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.5
+    type: gauge
+    help: This step of the processor - 1.3.6.1.4.1.232.1.2.2.1.1.5
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuStatus
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.6
+    type: gauge
+    help: The status of the processor - 1.3.6.1.4.1.232.1.2.2.1.1.6
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuExtSpeed
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.7
+    type: gauge
+    help: This is the external frequency in megahertz of the processor bus - 1.3.6.1.4.1.232.1.2.2.1.1.7
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuDesigner
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.8
+    type: gauge
+    help: This attribute specifies the manufacturer which designs this CPU. - 1.3.6.1.4.1.232.1.2.2.1.1.8
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuSocketNumber
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.9
+    type: gauge
+    help: The physical socket number of the CPU chip - 1.3.6.1.4.1.232.1.2.2.1.1.9
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuThreshPassed
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.10
+    type: gauge
+    help: CPU threshold passed (Exceeded) - 1.3.6.1.4.1.232.1.2.2.1.1.10
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuHwLocation
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.11
+    type: DisplayString
+    help: A text description of the hardware location, on complex multi SBB hardware
+      only, for the CPU - 1.3.6.1.4.1.232.1.2.2.1.1.11
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuCellTablePtr
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.12
+    type: gauge
+    help: This is the index for the cell in cpqSeCellTable where this CPU is physically
+      located. - 1.3.6.1.4.1.232.1.2.2.1.1.12
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuPowerpodStatus
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.13
+    type: gauge
+    help: This is the status of CPU power pod - 1.3.6.1.4.1.232.1.2.2.1.1.13
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuArchitectureRevision
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.14
+    type: DisplayString
+    help: This is the CPU architecture revision. - 1.3.6.1.4.1.232.1.2.2.1.1.14
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuCore
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.15
+    type: gauge
+    help: The number of cores in this CPU module - 1.3.6.1.4.1.232.1.2.2.1.1.15
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUSerialNumber
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.16
+    type: DisplayString
+    help: The OEM serial number of the CPU. - 1.3.6.1.4.1.232.1.2.2.1.1.16
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUPartNumber
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.17
+    type: DisplayString
+    help: The OEM part number of the CPU. - 1.3.6.1.4.1.232.1.2.2.1.1.17
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUSerialNumberMfgr
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.18
+    type: DisplayString
+    help: The manufacturer serial number of the CPU. - 1.3.6.1.4.1.232.1.2.2.1.1.18
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUPartNumberMfgr
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.19
+    type: DisplayString
+    help: The manufacturer part number of the CPU. - 1.3.6.1.4.1.232.1.2.2.1.1.19
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUCoreIndex
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.20
+    type: gauge
+    help: This is a number that uniquely identifies a core in a CPU unit. - 1.3.6.1.4.1.232.1.2.2.1.1.20
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUMaxSpeed
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.21
+    type: gauge
+    help: This is the maximum internal speed in megahertz this processor can support
+      - 1.3.6.1.4.1.232.1.2.2.1.1.21
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUCoreThreadIndex
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.22
+    type: gauge
+    help: This is an unique number to identify the running threads in a CPU core.
+      - 1.3.6.1.4.1.232.1.2.2.1.1.22
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUChipGenerationName
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.23
+    type: DisplayString
+    help: CPU chip generation name e.g - 1.3.6.1.4.1.232.1.2.2.1.1.23
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUMultiThreadStatus
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.24
+    type: gauge
+    help: This OID identifies whether the CPU threading is enabled or not. - 1.3.6.1.4.1.232.1.2.2.1.1.24
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUCoreMaxThreads
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.25
+    type: gauge
+    help: This OID indicates the maximum number of threads that a cpu core is capable
+      of. - 1.3.6.1.4.1.232.1.2.2.1.1.25
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuLowPowerStatus
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.26
+    type: gauge
+    help: Servers like Itanium has capability to lower power supply to CPU if it is
+      idle for specified period of time - 1.3.6.1.4.1.232.1.2.2.1.1.26
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuPrimary
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.27
+    type: gauge
+    help: On SMP systems one of the CPU is set to Primary and the other CPUs as secondary
+      - 1.3.6.1.4.1.232.1.2.2.1.1.27
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuCoreSteppingText
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.28
+    type: DisplayString
+    help: The processor stepping version string - 1.3.6.1.4.1.232.1.2.2.1.1.28
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuCurrentPerformanceState
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.29
+    type: gauge
+    help: This OID returns the current performance state of this processor - 1.3.6.1.4.1.232.1.2.2.1.1.29
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuMinPerformanceState
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.30
+    type: gauge
+    help: This OID returns the minimum performance state set for this processor -
+      1.3.6.1.4.1.232.1.2.2.1.1.30
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuMaxPerformanceState
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.31
+    type: gauge
+    help: This OID returns the maximum performance state set for this processor -
+      1.3.6.1.4.1.232.1.2.2.1.1.31
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqDaPhyDrvCntlrIndex
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.1
+    type: gauge
+    help: Drive Array Physical Drive Controller Index - 1.3.6.1.4.1.232.3.2.5.1.1.1
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvIndex
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.2
+    type: gauge
+    help: Drive Array Physical Drive Index - 1.3.6.1.4.1.232.3.2.5.1.1.2
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvModel
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.3
+    type: DisplayString
+    help: Physical Drive Model - 1.3.6.1.4.1.232.3.2.5.1.1.3
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvFWRev
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.4
+    type: DisplayString
+    help: Physical Drive Firmware Revision - 1.3.6.1.4.1.232.3.2.5.1.1.4
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvBay
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.5
+    type: gauge
+    help: Physical Drive Bay Location - 1.3.6.1.4.1.232.3.2.5.1.1.5
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvStatus
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.6
+    type: gauge
+    help: Physical Drive Status - 1.3.6.1.4.1.232.3.2.5.1.1.6
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvFactReallocs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.7
+    type: gauge
+    help: This shows the number of spare sectors available for remapping at the time
+      the physical drive was shipped - 1.3.6.1.4.1.232.3.2.5.1.1.7
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvUsedReallocs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.8
+    type: counter
+    help: Physical Drive Used Reallocated Sectors - 1.3.6.1.4.1.232.3.2.5.1.1.8
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvRefHours
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.9
+    type: counter
+    help: Reference Time in hours - 1.3.6.1.4.1.232.3.2.5.1.1.9
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHReads
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.10
+    type: counter
+    help: Sectors Read (high) - 1.3.6.1.4.1.232.3.2.5.1.1.10
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvReads
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.11
+    type: counter
+    help: Sectors Read (low) - 1.3.6.1.4.1.232.3.2.5.1.1.11
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHWrites
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.12
+    type: counter
+    help: Sectors Written (high) - 1.3.6.1.4.1.232.3.2.5.1.1.12
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvWrites
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.13
+    type: counter
+    help: Sectors Written (low) - 1.3.6.1.4.1.232.3.2.5.1.1.13
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHSeeks
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.14
+    type: counter
+    help: Total Seeks (high) - 1.3.6.1.4.1.232.3.2.5.1.1.14
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSeeks
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.15
+    type: counter
+    help: Total Seeks (low) - 1.3.6.1.4.1.232.3.2.5.1.1.15
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHardReadErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.16
+    type: counter
+    help: Hard Read Errors - 1.3.6.1.4.1.232.3.2.5.1.1.16
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvRecvReadErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.17
+    type: counter
+    help: Recovered Read Errors - 1.3.6.1.4.1.232.3.2.5.1.1.17
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHardWriteErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.18
+    type: counter
+    help: Hard Write Errors - 1.3.6.1.4.1.232.3.2.5.1.1.18
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvRecvWriteErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.19
+    type: counter
+    help: Recovered Write Errors - 1.3.6.1.4.1.232.3.2.5.1.1.19
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHSeekErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.20
+    type: counter
+    help: Seek Errors (High) - 1.3.6.1.4.1.232.3.2.5.1.1.20
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSeekErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.21
+    type: counter
+    help: Seek Errors (low) - 1.3.6.1.4.1.232.3.2.5.1.1.21
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSpinupTime
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.22
+    type: gauge
+    help: Spin up Time in tenths of seconds - 1.3.6.1.4.1.232.3.2.5.1.1.22
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvFunctTest1
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.23
+    type: gauge
+    help: Functional Test 1 - 1.3.6.1.4.1.232.3.2.5.1.1.23
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvFunctTest2
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.24
+    type: gauge
+    help: Functional Test 2 - 1.3.6.1.4.1.232.3.2.5.1.1.24
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvFunctTest3
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.25
+    type: gauge
+    help: Functional Test 3 - 1.3.6.1.4.1.232.3.2.5.1.1.25
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvDrqTimeouts
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.26
+    type: counter
+    help: DRQ Timeouts - 1.3.6.1.4.1.232.3.2.5.1.1.26
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvOtherTimeouts
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.27
+    type: counter
+    help: Other Timeouts - 1.3.6.1.4.1.232.3.2.5.1.1.27
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSpinupRetries
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.28
+    type: counter
+    help: Spin up Retries - 1.3.6.1.4.1.232.3.2.5.1.1.28
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvBadRecvReads
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.29
+    type: counter
+    help: Recovery Failed (Bad) Read Error - 1.3.6.1.4.1.232.3.2.5.1.1.29
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvBadRecvWrites
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.30
+    type: counter
+    help: Recovery Failed (Bad) Write Error - 1.3.6.1.4.1.232.3.2.5.1.1.30
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvFormatErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.31
+    type: counter
+    help: Format Error - 1.3.6.1.4.1.232.3.2.5.1.1.31
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvPostErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.32
+    type: counter
+    help: Power On Self Test (Post) Error - 1.3.6.1.4.1.232.3.2.5.1.1.32
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvNotReadyErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.33
+    type: counter
+    help: Drive Not Ready Errors - 1.3.6.1.4.1.232.3.2.5.1.1.33
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvReallocAborts
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.34
+    type: counter
+    help: Physical Drive Reallocation Aborts - 1.3.6.1.4.1.232.3.2.5.1.1.34
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvThreshPassed
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.35
+    type: gauge
+    help: Physical Drive Factory Threshold Passed (Exceeded) - 1.3.6.1.4.1.232.3.2.5.1.1.35
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHasMonInfo
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.36
+    type: gauge
+    help: Physical Drive Has Monitor Information - 1.3.6.1.4.1.232.3.2.5.1.1.36
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvCondition
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.37
+    type: gauge
+    help: The condition of the device - 1.3.6.1.4.1.232.3.2.5.1.1.37
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHotPlugs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.38
+    type: counter
+    help: Physical Drive Hot Plug Count - 1.3.6.1.4.1.232.3.2.5.1.1.38
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvMediaErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.39
+    type: counter
+    help: Physical Drive Media Failure Count - 1.3.6.1.4.1.232.3.2.5.1.1.39
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHardwareErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.40
+    type: counter
+    help: Physical Drive Hardware Error Count - 1.3.6.1.4.1.232.3.2.5.1.1.40
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvAbortedCmds
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.41
+    type: counter
+    help: Physical Drive Aborted Command Failures - 1.3.6.1.4.1.232.3.2.5.1.1.41
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSpinUpErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.42
+    type: counter
+    help: Physical Drive Spin-Up Failure Count - 1.3.6.1.4.1.232.3.2.5.1.1.42
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvBadTargetErrs
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.43
+    type: counter
+    help: Physical Drive Bad Target Count - 1.3.6.1.4.1.232.3.2.5.1.1.43
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvLocation
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.44
+    type: gauge
+    help: Drive Physical Location - 1.3.6.1.4.1.232.3.2.5.1.1.44
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSize
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.45
+    type: gauge
+    help: Physical Drive Size in MB - 1.3.6.1.4.1.232.3.2.5.1.1.45
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvBusFaults
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.46
+    type: counter
+    help: Physical Drive Bus Fault Count - 1.3.6.1.4.1.232.3.2.5.1.1.46
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvIrqDeglitches
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.47
+    type: counter
+    help: Physical Drive IRQ Deglitch Count - 1.3.6.1.4.1.232.3.2.5.1.1.47
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHotPlug
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.48
+    type: gauge
+    help: Physical Drive Hot Plug Support Status - 1.3.6.1.4.1.232.3.2.5.1.1.48
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvPlacement
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.49
+    type: gauge
+    help: Physical Drive Placement - 1.3.6.1.4.1.232.3.2.5.1.1.49
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvBusNumber
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.50
+    type: gauge
+    help: Physical Drive SCSI Bus Number - 1.3.6.1.4.1.232.3.2.5.1.1.50
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSerialNum
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.51
+    type: DisplayString
+    help: Physical Drive Serial Number - 1.3.6.1.4.1.232.3.2.5.1.1.51
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvPreFailMonitoring
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.52
+    type: gauge
+    help: Drive Array Physical Drive Predictive Failure Monitoring - 1.3.6.1.4.1.232.3.2.5.1.1.52
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvCurrentWidth
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.53
+    type: gauge
+    help: Drive Array Physical Drive Current Width - 1.3.6.1.4.1.232.3.2.5.1.1.53
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvCurrentSpeed
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.54
+    type: gauge
+    help: Drive Array Physical Drive Current Data Transfer Speed - 1.3.6.1.4.1.232.3.2.5.1.1.54
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvFailureCode
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.55
+    type: gauge
+    help: Drive Array Physical Drive Failure Code - 1.3.6.1.4.1.232.3.2.5.1.1.55
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvBlinkTime
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.56
+    type: counter
+    help: Physical Drive Blink Time Count - 1.3.6.1.4.1.232.3.2.5.1.1.56
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSmartStatus
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.57
+    type: gauge
+    help: Physical Drive S.M.A.R.T Status - 1.3.6.1.4.1.232.3.2.5.1.1.57
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvConfigurationStatus
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.58
+    type: gauge
+    help: Physical Drive Configuration Status - 1.3.6.1.4.1.232.3.2.5.1.1.58
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvRotationalSpeed
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.59
+    type: gauge
+    help: Drive Array Physical Drive Rotational Speed - 1.3.6.1.4.1.232.3.2.5.1.1.59
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvType
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.60
+    type: gauge
+    help: Physical Drive Type - 1.3.6.1.4.1.232.3.2.5.1.1.60
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSataVersion
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.61
+    type: gauge
+    help: Physical Drive SATA Version - 1.3.6.1.4.1.232.3.2.5.1.1.61
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvHostConnector
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.62
+    type: DisplayString
+    help: Physical Drive Host Connector - 1.3.6.1.4.1.232.3.2.5.1.1.62
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvBoxOnConnector
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.63
+    type: gauge
+    help: Physical Drive Box on Connector - 1.3.6.1.4.1.232.3.2.5.1.1.63
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvLocationString
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.64
+    type: DisplayString
+    help: Physical Drive Location String - 1.3.6.1.4.1.232.3.2.5.1.1.64
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvNegotiatedLinkRate
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.65
+    type: gauge
+    help: Drive Array Physical Drive Negotiated Link Rate - 1.3.6.1.4.1.232.3.2.5.1.1.65
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvNcqSupport
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.66
+    type: gauge
+    help: Drive Array Physical Drive Native Command Queueing - 1.3.6.1.4.1.232.3.2.5.1.1.66
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvPhyCount
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.67
+    type: gauge
+    help: Drive Array Physical Drive PHY Count - 1.3.6.1.4.1.232.3.2.5.1.1.67
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvMultipathAccess
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.68
+    type: gauge
+    help: Drive Array Physical Drive Multi-path Access Status - 1.3.6.1.4.1.232.3.2.5.1.1.68
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvMediaType
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.69
+    type: gauge
+    help: Drive Array Physical Drive Media Type - 1.3.6.1.4.1.232.3.2.5.1.1.69
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvCurrentTemperature
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.70
+    type: gauge
+    help: Drive Array Physical Drive Current Temperature - 1.3.6.1.4.1.232.3.2.5.1.1.70
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvTemperatureThreshold
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.71
+    type: gauge
+    help: Drive Array Physical Drive Temperature Threshold - 1.3.6.1.4.1.232.3.2.5.1.1.71
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvMaximumTemperature
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.72
+    type: gauge
+    help: Drive Array Physical Drive Maximum Temperature - 1.3.6.1.4.1.232.3.2.5.1.1.72
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSSDWearStatus
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.73
+    type: gauge
+    help: Drive Array Physical Drive Solid State Disk Wear Status - 1.3.6.1.4.1.232.3.2.5.1.1.73
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvPowerOnHours
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.74
+    type: counter
+    help: Drive Array Physical Drive Power On Hours - 1.3.6.1.4.1.232.3.2.5.1.1.74
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSSDPercntEndrnceUsed
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.75
+    type: gauge
+    help: Drive Array Physical Drive Solid State Percent Endurance Used - 1.3.6.1.4.1.232.3.2.5.1.1.75
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSSDEstTimeRemainingHours
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.76
+    type: counter
+    help: Drive Array Physical Drive Solid State Estimated Time Remaining In Hours
+      - 1.3.6.1.4.1.232.3.2.5.1.1.76
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvAuthenticationStatus
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.77
+    type: gauge
+    help: Drive Array Physical Drive Authentication Status - 1.3.6.1.4.1.232.3.2.5.1.1.77
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSmartCarrierAppFWRev
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.78
+    type: gauge
+    help: Physical Drive Smart Carrier Application Firmware Revision - 1.3.6.1.4.1.232.3.2.5.1.1.78
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvSmartCarrierBootldrFWRev
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.79
+    type: gauge
+    help: Physical Drive Smart Carrier Bootloader Firmware Revision - 1.3.6.1.4.1.232.3.2.5.1.1.79
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqDaPhyDrvEncryptionStatus
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.80
+    type: gauge
+    help: Physical Drive Encryption Status - 1.3.6.1.4.1.232.3.2.5.1.1.80
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+  - name: cpqHeResMem2ModuleSize
+    oid: 1.3.6.1.4.1.232.6.2.14.13.1.6
+    type: gauge
+    help: Module memory size in kilobytes - 1.3.6.1.4.1.232.6.2.14.13.1.6
+    indexes:
+    - labelname: cpqHeResMem2Module
+      type: gauge
+  - name: cpqHePowerMeterSupport
+    oid: 1.3.6.1.4.1.232.6.2.15.1
+    type: gauge
+    help: This value specifies whether Power Meter is supported by this Server  -
+      1.3.6.1.4.1.232.6.2.15.1
+  - name: cpqHePowerMeterStatus
+    oid: 1.3.6.1.4.1.232.6.2.15.2
+    type: gauge
+    help: This value specifies whether Power Meter reading is supported by this Server  -
+      1.3.6.1.4.1.232.6.2.15.2
+  - name: cpqHePowerMeterCurrReading
+    oid: 1.3.6.1.4.1.232.6.2.15.3
+    type: gauge
+    help: This is the current Power Meter reading in Watts - 1.3.6.1.4.1.232.6.2.15.3
+  - name: cpqHePowerMeterPrevReading
+    oid: 1.3.6.1.4.1.232.6.2.15.4
+    type: gauge
+    help: This is the previous Power Meter reading in Watts - 1.3.6.1.4.1.232.6.2.15.4
+  - name: cpqHeHWBiosCondition
+    oid: 1.3.6.1.4.1.232.6.2.16.1
+    type: gauge
+    help: This value indicates an error has been detected during Pre-OS Test (POST)
+      or during initial hardware initialization - 1.3.6.1.4.1.232.6.2.16.1
+  - name: cpqHeTemperatureChassis
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.1
+    type: gauge
+    help: The System Chassis number. - 1.3.6.1.4.1.232.6.2.6.8.1.1
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeTemperatureIndex
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.2
+    type: gauge
+    help: A number that uniquely specifies this temperature sensor description. -
+      1.3.6.1.4.1.232.6.2.6.8.1.2
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeTemperatureLocale
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.3
+    type: gauge
+    help: This specifies the location of the temperature sensor present in the system.
+      - 1.3.6.1.4.1.232.6.2.6.8.1.3
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeTemperatureCelsius
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.4
+    type: gauge
+    help: This is the current temperature sensor reading in degrees celsius - 1.3.6.1.4.1.232.6.2.6.8.1.4
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeTemperatureThreshold
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.5
+    type: gauge
+    help: This is the shutdown threshold temperature sensor setting in degrees celsius
+      - 1.3.6.1.4.1.232.6.2.6.8.1.5
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeTemperatureCondition
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.6
+    type: gauge
+    help: The Temperature sensor condition - 1.3.6.1.4.1.232.6.2.6.8.1.6
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeTemperatureThresholdType
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.7
+    type: gauge
+    help: This specifies the type of this instance of temperature sensor - 1.3.6.1.4.1.232.6.2.6.8.1.7
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeTemperatureHwLocation
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.8
+    type: DisplayString
+    help: A text description of the hardware location, on complex multi SBB hardware
+      only, for the temperature sensor - 1.3.6.1.4.1.232.6.2.6.8.1.8
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeFltTolPwrSupplyCondition
+    oid: 1.3.6.1.4.1.232.6.2.9.1
+    type: gauge
+    help: This value specifies the overall condition of the fault tolerant power supply
+      sub-system. - 1.3.6.1.4.1.232.6.2.9.1
+  - name: cpqHeFltTolPwrSupplyStatus
+    oid: 1.3.6.1.4.1.232.6.2.9.2
+    type: gauge
+    help: This value specifies the status of the fault tolerant power supply. - 1.3.6.1.4.1.232.6.2.9.2
+  - name: cpqHeFltTolPowerSupplyChassis
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.1
+    type: gauge
+    help: The system chassis number. - 1.3.6.1.4.1.232.6.2.9.3.1.1
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyBay
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.2
+    type: gauge
+    help: The bay number to index within this chassis. - 1.3.6.1.4.1.232.6.2.9.3.1.2
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyPresent
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.3
+    type: gauge
+    help: Indicates whether the power supply is present in the chassis. - 1.3.6.1.4.1.232.6.2.9.3.1.3
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyCondition
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.4
+    type: gauge
+    help: The condition of the power supply - 1.3.6.1.4.1.232.6.2.9.3.1.4
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyStatus
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.5
+    type: gauge
+    help: The status of the power supply. - 1.3.6.1.4.1.232.6.2.9.3.1.5
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyMainVoltage
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.6
+    type: gauge
+    help: The input main voltage of the power supply in volts. - 1.3.6.1.4.1.232.6.2.9.3.1.6
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyCapacityUsed
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.7
+    type: gauge
+    help: The currently used capacity of the power supply in watts. - 1.3.6.1.4.1.232.6.2.9.3.1.7
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyCapacityMaximum
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.8
+    type: gauge
+    help: The maximum capacity of the power supply in watts. - 1.3.6.1.4.1.232.6.2.9.3.1.8
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyRedundant
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.9
+    type: gauge
+    help: The redundancy state of the power supply - 1.3.6.1.4.1.232.6.2.9.3.1.9
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyModel
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.10
+    type: DisplayString
+    help: The power supply model name. - 1.3.6.1.4.1.232.6.2.9.3.1.10
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplySerialNumber
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.11
+    type: DisplayString
+    help: The power supply serial number. - 1.3.6.1.4.1.232.6.2.9.3.1.11
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyAutoRev
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.12
+    type: OctetString
+    help: The power supply auto revision number. - 1.3.6.1.4.1.232.6.2.9.3.1.12
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyHotPlug
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.13
+    type: gauge
+    help: This indicates if the power supply is capable of being removed and/or inserted
+      while the system is in an operational state - 1.3.6.1.4.1.232.6.2.9.3.1.13
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyFirmwareRev
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.14
+    type: DisplayString
+    help: The power supply firmware revision - 1.3.6.1.4.1.232.6.2.9.3.1.14
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyHwLocation
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.15
+    type: DisplayString
+    help: A text description of the hardware location, on complex multi SBB hardware
+      only, for the power supply - 1.3.6.1.4.1.232.6.2.9.3.1.15
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplySparePartNum
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.16
+    type: DisplayString
+    help: The power supply part number or spare part number. - 1.3.6.1.4.1.232.6.2.9.3.1.16
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyRedundantPartner
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.17
+    type: gauge
+    help: This specifies the index of the redundant partner - 1.3.6.1.4.1.232.6.2.9.3.1.17
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqHeFltTolPowerSupplyErrorCondition
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.18
+    type: gauge
+    help: The Error condition of the power supply. - 1.3.6.1.4.1.232.6.2.9.3.1.18
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+  - name: cpqSm2CntlrServerPowerState
+    oid: 1.3.6.1.4.1.232.9.2.2.32
+    type: gauge
+    help: The current power state for the server - 1.3.6.1.4.1.232.9.2.2.32
+  version: 2
+  auth:
+    community: public

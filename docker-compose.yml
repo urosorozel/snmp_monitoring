@@ -1,0 +1,60 @@
+version: '3.2'
+
+services:
+  snmp_exporter_generator:
+    container_name: snmp_exporter_generator
+    build: './snmp_exporter_generator'
+    volumes:
+      - './snmp_exporter_generator/mibs:/root/.snmp/mibs'
+      - './snmp_exporter_generator/generator.yml:/opt/generator.yml'
+      - './snmp_exporter/:/opt/'
+
+  snmp_exporter:
+    container_name: snmp_exporter
+    image: prom/snmp-exporter
+    ports:
+      - "9116:9116"
+    depends_on:
+      - snmp_exporter_generator
+    volumes:
+      - "./snmp_exporter/snmp.yml:/etc/snmp_exporter/snmp.yml"
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    user: "65534"
+    ports:
+      - "9090:9090"
+    depends_on:
+      - snmp_exporter
+    volumes:
+      #- './prometheus/data:/prometheus'
+      - 'prometheus_data:/prometheus'
+      - './prometheus/config:/etc/prometheus'
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    user: "472"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    env_file:
+      - ./grafana/config.monitoring
+
+        #    environment:
+        #GF_INSTALL_PLUGINS: "grafana-clock-panel,grafana-simple-json-datasource"
+        #GF_SECURITY_ADMIN_PASSWORD: "GrAfAnA!"
+    volumes:
+      #- './grafana/data:/var/lib/grafana'
+      #- './grafana/grafana.ini:/etc/grafana.ini'
+      - './grafana/provisioning/:/etc/grafana/provisioning/'
+      - 'grafana_data:/var/lib/grafana'
+volumes:
+    prometheus_data: {}
+    grafana_data: {}
+
+        #volumes:
+        #  grafana_data: {}
+        #  prometheus_data: {}
+        #
