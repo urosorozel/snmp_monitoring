@@ -27,7 +27,6 @@ services:
     depends_on:
       - snmp_exporter
     volumes:
-      #- './prometheus/data:/prometheus'
       - 'prometheus_data:/prometheus'
       - './prometheus/config:/etc/prometheus'
 
@@ -42,19 +41,9 @@ services:
     env_file:
       - ./grafana/config.monitoring
 
-        #    environment:
-        #GF_INSTALL_PLUGINS: "grafana-clock-panel,grafana-simple-json-datasource"
-        #GF_SECURITY_ADMIN_PASSWORD: "GrAfAnA!"
     volumes:
-      #- './grafana/data:/var/lib/grafana'
-      #- './grafana/grafana.ini:/etc/grafana.ini'
       - './grafana/provisioning/:/etc/grafana/provisioning/'
       - 'grafana_data:/var/lib/grafana'
 volumes:
     prometheus_data: {}
     grafana_data: {}
-
-        #volumes:
-        #  grafana_data: {}
-        #  prometheus_data: {}
-        #

@@ -1,5 +1,6 @@
 FROM golang:latest
-
+#ENV https_proxy http://proxyserver:8080/
+#ENV http_proxy http://proxyserver:8080/
 # Enable non-free
 RUN sed -i -e 's/$/ contrib non-free/g' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y libsnmp-dev snmp-mibs-downloader

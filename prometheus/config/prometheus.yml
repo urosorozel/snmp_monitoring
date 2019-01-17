@@ -3,23 +3,40 @@ global:
   evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
 
 scrape_configs:
-  # Cisco
-  - job_name: 'ddwrt'
-    scrape_interval: 10s
-    scrape_timeout: 10s
+  - job_name: 'snmp_exporter_dell'
+    scrape_interval: 120s
+    scrape_timeout: 30s
     file_sd_configs:
         - files :
           - /etc/prometheus/dell.yml
-          - /etc/prometheus/hp.yml
+    #static_configs:
+    #  - targets:
+    #    - 123.243.41.168  # SNMP device.
     # SNMP device.
     metrics_path: /snmp
     params:
-      module: [snmp] #which OID's we will be querying in
+      module: [dell] #which OID's we will be querying in
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
       - target_label: __address__
-        replacement: 172.17.0.7:9116  # The SNMP exporter's real hostname:port.
+        replacement: snmp_exporter:9116  # The SNMP exporter's real hostname:port.
+
+  - job_name: 'snmp_exporter_hpe'
+    scrape_interval: 120s
+    scrape_timeout: 30s
+    file_sd_configs:
+        - files :
+          - /etc/prometheus/hpe.yml
+    # SNMP device.
+    metrics_path: /snmp
+    params:
+      module: [hpe] #which OID's we will be querying in
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - target_label: __address__
+        replacement: snmp_exporter:9116  # The SNMP exporter's real hostname:port.
 
 alerting:
   alertmanagers:

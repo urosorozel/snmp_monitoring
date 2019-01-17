@@ -1,0 +1,6 @@
+- targets: ["10.0.0.100"]
+  labels:
+    env: "dc1"
+    vendor: "dell"
+    job: "dell-server1"
+

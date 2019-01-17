@@ -1,3 +1,6 @@
-GF_INSTALL_PLUGINS: "grafana-clock-panel,grafana-simple-json-datasource"
-GF_SECURITY_ADMIN_PASSWORD: "GrAfAnA!"
+#GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource
+GF_SECURITY_ADMIN_PASSWORD=GrAfAnA!
 GF_USERS_ALLOW_SIGN_UP=false
+HTTP_PROXY=http://10.0.0.10:3128
+HTTPS_PROXY=http://10.0.0.10:3128
+NO_PROXY=localhost,127.0.0.1,prometheus
