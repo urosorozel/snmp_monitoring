@@ -1557,6 +1557,71 @@ CPQSINFO-MIB DEFINITIONS ::= BEGIN
                     5h - 0Fh = Reserved."
 
        ::= { cpqSiSystemBoard 25 }
+
+    cpqSiSystemTelemetryMetric OBJECT-TYPE
+        SYNTAX INTEGER {
+            cpuUtilization(1),
+            memoryBusUtilization(2),
+            ioBusUtilization(3),
+            cpuInterconnectUtilization(4),
+            jitterCount(5),
+            cpu0PowerUtilization(6),
+            cpu1PowerUtilization(7),
+            cpu2PowerUtilization(8),
+            cpu3PowerUtilization(9),
+            cpu0AverageFrequency(10),
+            cpu1AverageFrequency(11),
+            cpu2AverageFrequency(12),
+            cpu3AverageFrequency(13)
+        }
+        ACCESS read-only
+        STATUS optional
+        DESCRIPTION
+              "This field specifies the system telemetry metric type.
+            CPU Utilization(1)
+               Overall CPU utilization of the system.
+            Memory Bus Utilization(2)
+               Memory Bus utilization of the system.
+            I/O Bus Utilization(3)
+               I/O Bus utilization of the system.
+            CPU Interconnect Utilization(4)
+               CPU Interconnect utilization of the system.
+            Jitter Count(5)
+               Jitter count of the system.
+            CPU0 Power Utilization(6)
+               CPU0 Power utilization of the system.
+            CPU1 Power Utilization(7)
+               CPU1 Power utilization of the system.
+            CPU2 Power Utilization(8)
+               CPU2 Power utilization of the system.
+            CPU3 Power Utilization(9)
+               CPU3 Power utilization of the system.
+            CPU0 Average Frequency(10)
+               CPU0 Average frequency of the system.
+            CPU1 Average Frequency(11)
+               CPU1 Average frequency of the system.
+            CPU2 Average Frequency(12)
+               CPU2 Average frequency of the system.
+            CPU3 Average Frequency(13)
+               CPU3 Average frequency of the system."
+
+        ::= { cpqSiSystemBoard 26 }
+
+    cpqSiSystemTelemetryThresholdStatus OBJECT-TYPE
+        SYNTAX INTEGER {
+            aboveUpperThreshold(1),
+            belowLowerThreshold(2)
+        }
+        ACCESS read-only
+        STATUS optional
+        DESCRIPTION
+              "This field corresponds to the threshold(upper/lower) breach condition of the metric.
+            Above Upper Threshold(1)
+               The value has exceeded upper threshold.
+            Below Lower Threshold(2)
+               The value is below lower threshold."
+
+        ::= { cpqSiSystemBoard 27 }
        
 -- ****************************************************************************
 --   System Information Board Revision Group
@@ -4047,5 +4112,21 @@ CPQSINFO-MIB DEFINITIONS ::= BEGIN
         
         ::= 2017
 
+  cpqSiSysTelemetryThresholdAlert TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES { sysName, cpqHoTrapFlags, cpqSiSystemTelemetryMetric, cpqSiSystemTelemetryThresholdStatus}
+        DESCRIPTION
+           "The system telemetry metric value has either exceeded upper threshold or is below lower threshold."
+        --#TYPE "System telemetry threshold alert(2018)"
+        --#SUMMARY "System telemetry metric %d is %d."
+        --#ARGUMENTS {2,3}
+        --#SEVERITY INFORMATIONAL
+        --#TIMEINDEX 99
+        --#STATE OPERATIONAL
+        --#SIMPLE_SEVERITY INFORMATIONAL
+        --#HWSTATUS_CATEGORY NONE
+        --#ACTION "Please check the current configured server workload."
+
+        ::= 2018
 
 END

@@ -8279,5 +8279,125 @@ cpqHeManagementProcInReset TRAP-TYPE
         --#ACTION "Check the Integrated Management Log (IML) for additional information."
         ::= 6104         
 
--- End for rev 11.10. 
+-- End for rev 11.10.
+
+      cpqHePowerFuseDegraded TRAP-TYPE
+	    ENTERPRISE compaq
+	    VARIABLES  { sysName, cpqHoTrapFlags }
+	    DESCRIPTION
+            "A degraded power event has been detected and the server system board should be replaced."
+			
+		--#TYPE "Power Fuse Fault(6105)"
+		--#SUMMARY "A degraded power event has been detected and the server system board should be replaced."
+		--#ARGUMENTS {}
+		--#SEVERITY CRITICAL
+		--#TIMEINDEX 99
+		--#STATE DEGRADED
+		--#SIMPLE_SEVERITY CRITICAL
+		--#HWSTATUS_CATEGORY POWER
+		--#ACTION "Power down and remove the server from power to have the server system board replaced."
+		::= 6105
+		
+      cpqHeTPMSecureEraseFailed TRAP-TYPE
+	    ENTERPRISE compaq
+		VARIABLES  { sysName, cpqHoTrapFlags }
+		DESCRIPTION
+            "Trusted Platform Module has failed the Secure Erase Operation."
+		
+		--#TYPE "Trusted Platform Module has failed the Secure Erase Operation(6106)"
+		--#SUMMARY "Trusted Platform Module has failed the Secure Erase Operation."
+		--#ARGUMENTS {}
+		--#SEVERITY CRITICAL
+		--#TIMEINDEX 99
+		--#STATE DEGRADED
+		--#SIMPLE_SEVERITY CRITICAL
+		--#HWSTATUS_CATEGORY STORAGE
+		--#ACTION "Update Trusted Platform Module firmware and retry the secure erase operation. If the issue persists, contact HPE support."
+		::= 6106
+		
+      cpqHeSPISecureEraseFailed TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES  { sysName, cpqHoTrapFlags }
+        DESCRIPTION
+            "Secure Erase of System Firmware Configuration has failed."
+
+        --#TYPE "Secure Erase of System Firmware Configuration has failed(6107)"
+        --#SUMMARY "Secure Erase of System Firmware Configuration has failed."
+        --#ARGUMENTS {}
+		--#SEVERITY CRITICAL
+        --#TIMEINDEX 99
+        --#STATE DEGRADED
+        --#SIMPLE_SEVERIRY CRITICAL
+        --#HWSTATUS_CATEGORY STORAGE
+        --#ACTION "Retry Secure Erase. Please contact HPE Support if issue persists."
+        ::= 6107
+
+      cpqHeNvdimmSecureEraseFailed TRAP-TYPE
+	    ENTERPRISE compaq
+		VARIABLES  { sysName, cpqHoTrapFlags,
+		            cpqHeNvdimmDimmNum,  cpqHeNvdimmProcessorNum,  cpqHeNvdimmSerialNumber }
+        DESCRIPTION
+			"Secure Erase of Intel Optane DC Persistent Memory has failed."
+
+		--#TYPE "Secure Erase of Intel Optane DC Persistent Memory has failed(6108)"
+		--#SUMMARY "Secure Erase of Intel Optane DC Persistent Memory has failed: ( Processor %d, DIMM %d, Serial Number %s )"
+		--#ARGUMENTS { 3, 2, 4 }
+		--#SEVERITY CRITICAL
+		--#TIMEINDEX 99
+		--#STATE DEGRADED
+		--#SIMPLE_SEVERIRY CRITICAL
+		--#HWSTATUS_CATEGORY MEMORY
+		--#ACTION "Retry Secure Erase. Please contact HPE Support if issue persists."
+		::= 6108
+
+      cpqHeNANDSecureEraseFailed TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES { sysName, cpqHoTrapFlags }
+        DESCRIPTION
+            "Secure Erase of the management processor's embedded media device has Failed."
+
+        --#TYPE "Secure Erase of the management processor's embedded media device has Failed(6109)"
+		--#SUMMARY "Secure Erase of the management processor's embedded media device has Failed"
+		--#ARGUMENTS {}
+		--#SEVERITY CRITICAL
+		--#TIMEINDEX 99
+		--#STATE DEGRADED
+		--#SIMPLE_SEVERIRY CRITICAL
+		--#HWSTATUS_CATEGORY STORAGE
+		--#ACTION "Retry Secure Erase. Please contact HPE support if issue persists."
+		::= 6109
+
+      cpqHeSedPassphrasefail TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES  { sysName, cpqHoTrapFlags, cpqHeNvdimmProcessorNum, cpqHeNvdimmDimmNum }
+        DESCRIPTION
+            "Device Encryption Error. Enabling or Disabling encryption/modifying pass phrase failed."
+
+        --#TYPE "Encryption logic fault or Wrong pass phrase used(6110)"
+        --#SUMMARY "Failed to do selected Enabling or Disabling encryption/pass phrase modification operation on Proc number %d Dimm number %d."
+        --#ARGUMENTS {2,3}
+        --#SEVERITY CRITICAL
+        --#TIMEINDEX 99
+        --#STATE DEGRADED
+        --#SIMPLE_SEVERITY CRITICAL
+        --#HWSTATUS_CATEGORY STORAGE
+        --#ACTION "Retry with correct pass phrase. If issue persists contact HPE support."
+        ::= 6110
+
+      cpqHeSedUnlockfail TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES  { sysName, cpqHoTrapFlags, cpqHeNvdimmProcessorNum, cpqHeNvdimmDimmNum }
+        DESCRIPTION
+            "Three wrong attempts were made to unlock Self Encrypting Device. The device will be locked until the next reboot."
+
+        --#TYPE "Unlocking attempts exceeded threshold limit(6111)"
+        --#SUMMARY "Failed to unlock Self Encrypting Device Proc number %d Dimm number %d."
+        --#ARGUMENTS {2,3}
+        --#SEVERITY MAJOR
+        --#TIMEINDEX 99
+        --#STATE DEGRADED
+        --#SIMPLE_SEVERITY MAJOR
+        --#HWSTATUS_CATEGORY STORAGE
+        --#ACTION "Reboot server and retry."
+        ::= 6111
 END

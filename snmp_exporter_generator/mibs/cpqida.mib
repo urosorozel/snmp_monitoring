@@ -1138,16 +1138,16 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
               
             Generic HBA (85)
               Smart HBA.
-			  
+              
             Smart Array P240nr (86)
               HPE Smart Array P240nr Controller.
-			  
+              
             Smart HBA H240nr (87)
               HPE Smart HBA H240nr Controller.
-			  
+              
             Smart Array P840ar (88)
               HP Smart Array P840ar Controller.
-			  
+              
             Smart Array P542D (89)
               HPE Smart Array P542D Controller.
               
@@ -1768,7 +1768,7 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
             high (4)
               The rebuild priority is high.
             
-			mediumHigh(5)
+            mediumHigh(5)
               The rebuild priority is mediumHigh."
         ::= { cpqDaCntlrEntry 23 }
 
@@ -2175,7 +2175,7 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
             other(1),
             smartArrayMode(2),
             smartHbaMode(3),
-	        mixedMode (4)
+            mixedMode (4)
         }        
         ACCESS  read-only
         STATUS  mandatory
@@ -2633,7 +2633,7 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
               Indicates that write cache operations have been permanently
               disabled.  The cache has been disabled because the charger circuit
               on the flash backed cache module has failed.
-			
+            
             Centralized Backup Power Source Cable Error (33)
               Indicates that write cache operations have been permanently
               disabled. The cache has been disabled because the controller 
@@ -3224,7 +3224,8 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
             raid50 (8),
             raid60 (9),
             raid1Adm (10),
-            raid10Adm (11)
+            raid10Adm (11),
+            raid10 (12)
         }
         ACCESS  read-only
         STATUS  mandatory
@@ -3289,7 +3290,11 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
               For each physical drive, there are two or more physical drives
               containing identical data in addition to data being striped across
               multiple drives. If a drive fails, the data can be retrieved from 
-              any of the mirrored drives."
+              any of the mirrored drives.
+              
+           RAID 1+0 (12)
+              Combination of multiple mirrored drives (RAID 1) with
+              data stripe (RAID 0) in a single array."
         ::= { cpqDaLogDrvEntry 3 }
 
      cpqDaLogDrvStatus OBJECT-TYPE
@@ -6704,8 +6709,8 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
             The following values are defined:
 
             other(1)
-              The instrument agent is unable to determine the physical drive’s 
-              media type.
+              The instrument agent is unable to determine the media type of physical drive. 
+              
 
             rotatingPlatters(2)
               The physical drive media is composed of rotating platters.
@@ -6778,8 +6783,8 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
 
 
             Other (1)
-              The instrument agent is unable to determine the physical drive’s 
-              solid state disk wear status. This value would be used for non
+              The instrument agent is unable to determine the solid state disk  
+              wear status of the physical drive. This value would be used for non
               SSD drives or SSD drives that do not support wear reporting.
 
             Ok (2)
@@ -10741,7 +10746,7 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
              User Action: If cpqDaCntlrBoardStatus is `generalFailure(3)`, you
              may need to reboot the server or replace the controller.  
              After the system is rebooted, check the variable 
-             cpqDaCntlrLastLockupCode for the controller’s last lockup code. 
+             cpqDaCntlrLastLockupCode for last lockup code of the controller. 
              If cpqDaCntlrBoardStatus is `cableProblem(4)`, check the cable 
              connections between the controller and the storage system. If 
              cpqDaCntlrBoardStatus is `cacheModuleMissing(6)`, the array
@@ -10849,7 +10854,7 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
 
         --#TYPE "Physical Drive Threshold Passed (3037)"
         --#SUMMARY "Factory threshold passed for a physical drive (Bay: %d, Bus: %d, Controller: %s)."
-	     --#ARGUMENTS {6, 5, 2}
+         --#ARGUMENTS {6, 5, 2}
         --#SEVERITY CRITICAL
         --#TIMEINDEX 99
         --#SIMPLE_SEVERITY CRITICAL
@@ -11160,8 +11165,8 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
              the status of a drive array partner controller.  The variable
              cpqDaCntlrPartnerBoardStatus indicates the current partner 
              controller status. The variable cpqDaCntlrSerialNumber indicates
-             the controller’s serial number and cpqDaCntlrPartnerSerialNumber
-             indicates the partner controller’s serial number.
+             the controller serial number and cpqDaCntlrPartnerSerialNumber
+             indicates the partner controller serial number.
 
              User Action: Check the partner controller for problems. If lost 
              communication with the partner controller is the result of a user 
@@ -11210,5 +11215,22 @@ CPQIDA-MIB DEFINITIONS ::= BEGIN
 
 
 
+    cpqDaSmartArraySecureEraseFailed TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES { sysName, cpqHoTrapFlags, cpqDaPhyDrvCntlrIndex,
+                    cpqDaPhyDrvIndex,  cpqDaPhyDrvBay,  cpqDaPhyDrvSerialNum }
+        DESCRIPTION
+            "Secure Erase of Smart Array has failed."
 
+        --#TYPE "Secure Erase of Smart Array has failed(3903)"
+        --#SUMMARY "Secure Erase of Smart Array has failed : ( Controller Index %d, Drive Index %d, Drive Bay %d, Serial Number %s )"
+        --#ARGUMENTS { 2, 3, 4, 5 }
+        --#SEVERITY CRITICAL
+        --#TIMEINDEX 99
+        --#STATE DEGRADED
+        --#SIMPLE_SEVERITY CRITICAL
+        --#HWSTATUS_CATEGORY STORAGE
+        --#ACTION "Retry Secure Erase. Please contact HPE Support if issue persists."
+        
+        ::= 3903
 END

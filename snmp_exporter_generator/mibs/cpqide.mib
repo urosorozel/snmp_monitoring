@@ -1427,9 +1427,19 @@ CPQIDE-MIB DEFINITIONS ::= BEGIN
              the information is not available."
         ::= { cpqIdeAtaDiskEntry 26 }
 
-
-
-        
+     cpqIdeAtaEraseFailureType OBJECT-TYPE
+        SYNTAX INTEGER {
+           secureEraseFailed(1),
+           secureEraseNotSupported(2),
+           noEraseSupported(3)
+           }
+        ACCESS  read-only
+        STATUS  mandatory
+        DESCRIPTION
+           "The value specifies the secure erase status of SATA drive.
+        secureEraseNotSupported(2)
+        Secure erase is not supported so proceeding with Basic Erase"
+        ::= { cpqIdeAtaDisk 2 }
 
 -- ****************************************************************************
 --    IDE ATA Device Group
@@ -2025,9 +2035,27 @@ CPQIDE-MIB DEFINITIONS ::= BEGIN
         --#VARBINDSEVERITY 2
         --#SIMPLE_SEVERITY CRITICAL
         --#HWSTATUS_CATEGORY STORAGE
-        --#ACTION "If the SSD wear status is 'ssdWearOut(6)', replace the drive."
-        
+        --#ACTION "If the SSD wear status is 'ssdWearOut(6)', replace the drive." 
         ::= 14006
+    
+  cpqIdeAtaSecureEraseFailed TRAP-TYPE
+      ENTERPRISE compaq
+    VARIABLES  { sysName, cpqHoTrapFlags,  cpqIdeAtaDiskControllerIndex,
+                 cpqIdeAtaDiskIndex,  cpqIdeAtaDiskSerialNumber,
+           cpqIdeAtaEraseFailureType}
+    DESCRIPTION
+        "Secure Erase of SATA drive has failed."
+      
+    --#TYPE "Secure Erase of SATA drive failed (14007)"
+        --#SUMMARY "Secure Erase of SATA drive has failed: ( Controller %d, Disk %d, Serial Number %s, Failure Type %d )"
+    --#ARGUMENTS { 2, 3, 4, 5 }
+    --#SEVERITY CRITICAL
+    --#TIMEINDEX 99
+    --#STATE DEGRADED
+    --#SIMPLE_SEVERIRY CRITICAL
+    --#HWSTATUS_CATEGORY STORAGE
+    --#ACTION "Please refer the IML Troubleshooting guide or click on Learn More link for additional information and any necessary action to be taken."
+    ::= 14007
 
 
 END

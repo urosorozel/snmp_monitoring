@@ -1128,7 +1128,20 @@ CPQSM2-MIB DEFINITIONS ::= BEGIN
             "Indicate the watchdog timer timeout action and timer details." 
         ::= { cpqSm2Cntlr 36}
 
+    cpqSm2CntlrOverallSecStatus OBJECT-TYPE
+        SYNTAX INTEGER {
+            Ok(1),
+            Risk(2),
+            Ignored(3)
+	    }
+		ACCESS read-only
+        STATUS mandatory
+        DESCRIPTION
+            "The field indicates the overall security status."
 
+        ::= { cpqSm2Cntlr 37}
+
+		
 -- ****************************************************************************
 --   Remote Insight/ Integrated Lights-Out Event Log Group
 --   =====================================================
@@ -3220,7 +3233,7 @@ detected the presence of network link."
               --#STATE   OPERATIONAL
               --#SIMPLE_SEVERITY MAJOR
               --#HWSTATUS_CATEGORY FIRMWARE
-              --#ACTION "Refer to failure code for more detail on flash failure."
+              --#ACTION "Refer to failure code for more information and re-initiate firmware update or upload after rectifying the issue."
     ::= 9026
 
     cpqSm2SecurityStateChange TRAP-TYPE
@@ -3256,8 +3269,41 @@ detected the presence of network link."
               --#STATE   OPERATIONAL
               --#SIMPLE_SEVERITY MAJOR
               --#HWSTATUS_CATEGORY MANAGEMENTPROCESSOR
-              --#ACTION "Review management processor event logs and any relevant operating system history for additional information"
+              --#ACTION "Check the operating system, application, hardware, and all iLO based event logs for exception events/additional information."
     ::= 9028
 
-END
+    cpqSm2OverallSecStateAtRisk TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES { sysName, cpqHoTrapFlags}
+        DESCRIPTION
+            "The overall security state of the system is at risk."
 
+          --#TYPE "System Security State At Risk (9029)"
+          --#SUMMARY "Overall security state of the system is at risk."
+          --#ARGUMENTS {}
+          --#SEVERITY MAJOR
+          --#TIMEINDEX 99
+          --#STATE OPERATIONAL
+          --#SIMPLE_SEVERITY MAJOR
+          --#HWSTATUS_CATEGORY SECURITY
+          --#ACTION "Refer to iLO User Manual or Security Dashboard help page."
+    ::= 9029
+	
+    cpqSm2OverallSecStatusChange TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES { sysName, cpqHoTrapFlags, cpqSm2CntlrOverallSecStatus}
+        DESCRIPTION
+            "Overall security status changed."
+
+          --#TYPE "Overall security status changed (9030)"
+          --#SUMMARY "Overall security status changed from %d to Risk"
+          --#ARGUMENTS {2}
+          --#SEVERITY MAJOR
+          --#TIMEINDEX 99
+          --#STATE OPERATIONAL
+          --#SIMPLE_SEVERITY MAJOR
+          --#HWSTATUS_CATEGORY SECURITY
+          --#ACTION "Refer to iLO User Manual or Security Dashboard help page."
+    ::= 9030
+
+END

@@ -1938,6 +1938,13 @@ CPQNIC-MIB DEFINITIONS ::= BEGIN
              interface associated."
         ::= { cpqNicPhyAdapBaseMemEntry 3 }
 
+    cpqNicFlexLomPhySlot OBJECT-TYPE
+        SYNTAX INTEGER (0..255)
+        ACCESS read-only
+        STATUS mandatory
+        DESCRIPTION
+            "The physical Flexlom slot number."
+        ::= { cpqNicIfPhysAdapter 3 }
 
 -- ****************************************************************************
 --   NIC VLAN Map Table
@@ -2525,7 +2532,7 @@ CPQNIC-MIB DEFINITIONS ::= BEGIN
              User Action: Check the connection to the adapter and validate the connectivity from the server to any external device, including the cabling. If no problems are found, the adapter or other connectivity device may need replacement."
 
              --#TYPE "NIC Redundancy Reduced Trap (18014)"
-             --#SUMMARY "Redundancy decreased by adapter in slot %d, port %d."
+             --#SUMMARY "There is a loss in network adaptor redundancy because the link to the adapter at slot %d, port %d is down."
              --#ARGUMENTS {2, 3}
              --#SEVERITY MAJOR
              --#TIMEINDEX 99
@@ -2567,15 +2574,36 @@ CPQNIC-MIB DEFINITIONS ::= BEGIN
              User Action: None Required"
 
              --#TYPE "NIC All Links Down Repaired (18016)"
-             --#SUMMARY "At least a link repaired in adapter in slot %d, ."
+             --#SUMMARY "There is at least one link that is now functional on the network adapter at slot %d."
              --#ARGUMENTS {2}
              --#SEVERITY INFORMATIONAL
              --#TIMEINDEX 99
              --#STATE OPERATIONAL
              --#SIMPLE_SEVERITY OK
              --#HWSTATUS_CATEGORY NETWORK
+             --#ACTION "None Required"
                           
         ::= 18016
+
+    cpqNicFlexLomTrainingFailed TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES { sysName, cpqHoTrapFlags, cpqNicFlexLomPhySlot }
+        DESCRIPTION
+            "This trap is sent when a Flexlom slot failed to train.
+
+            User Action: Reinstall the FlexibleLOM card. If the issue persists, update the card firmware. If the issue still persists, contact support"
+            
+            --#TYPE "Flexlom slot failed to train(18017)"
+            --#SUMMARY "Flexlom slot %d failed to train."
+            --#ARGUMENTS {2}
+            --#SEVERITY CRITICAL
+            --#TIMEINDEX 99
+            --#STATE DEGRADED
+            --#SIMPLE_SEVERITY CRITICAL
+            --#HWSTATUS_CATEGORY NETWORK
+            --#ACTION "Reinstall the FlexibleLOM card. If the issue persists, update the card firmware. If the issue still persists, contact support"
+            
+        ::= 18017
 
 END
 

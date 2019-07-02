@@ -80,8 +80,8 @@ CPQFCA-MIB DEFINITIONS ::= BEGIN
 --       cpqFcaMibRev Group            (1.3.6.1.4.1.232.16.1)
 --
 --      An SNMP agent conforming to this document will return a
---      cpqFcaMibRevMajor of one (1) and a cpqFcaMibRevMinor of
---      ninety-nine (99).
+--      cpqFcaMibRevMajor of one (2) and a cpqFcaMibRevMinor of
+--      zero (00).
 --
 --      Implementation of the cpqFcaMibRev group is mandatory for all agents
 --      supporting the Fibre Channel Array MIB.
@@ -3770,7 +3770,9 @@ CPQFCA-MIB DEFINITIONS ::= BEGIN
             fca-ql4820c-2p(88),
             fca-cn1200rt-2p(89),
             fca-cn1300r-2p(90),
-            fca-622flr-2p(91)
+            fca-622flr-2p(91),
+            fca-5330c(92),
+            fca-5830c(93)
         }
         ACCESS  read-only
         STATUS  mandatory
@@ -4052,7 +4054,13 @@ CPQFCA-MIB DEFINITIONS ::= BEGIN
               HPE StoreFabric CN1300R 10/25Gb CNA
 
             fca-622flr-2p(91)
-              HPE Eth 10/25Gb 2p 622FLR-SFP28 CNA"
+              HPE Eth 10/25Gb 2p 622FLR-SFP28 CNA
+
+            fca-5330c(92)
+              HPE Synergy 5330C 32Gb FC HBA
+
+            fca-5830c(93)
+              HPE Synergy 5830C 32Gb FC HBA"
 
         ::= { cpqFcaHostCntlrEntry 3 }
 

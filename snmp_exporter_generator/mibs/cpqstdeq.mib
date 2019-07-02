@@ -3305,7 +3305,13 @@ CPQSTDEQ-MIB DEFINITIONS ::= BEGIN
         DESCRIPTION
             "The PCI segment mode of the system, if supported."
         ::= { cpqSePci 4 }
-
+    cpqSePciePhySlot OBJECT-TYPE
+        SYNTAX INTEGER (0..255)
+        ACCESS read-only
+        STATUS mandatory
+        DESCRIPTION
+            "The physical PCIe slot number of this device."
+        ::= { cpqSePci 5 }
 -- ****************************************************************************
 -- Standard Equipment PC Card Group
 -- ========================================
@@ -5352,7 +5358,19 @@ CPQSTDEQ-MIB DEFINITIONS ::= BEGIN
             "The overall condition of PCIe Disk table."
         ::= { cpqSePCIeDisk 2 }
 
-
+    cpqSePCIeEraseFailureType OBJECT-TYPE
+        SYNTAX  INTEGER {
+           secureEraseFailed(1),
+           secureEraseNotSupported(2),
+           noEraseSupported(3)
+           }
+        ACCESS  read-only
+        STATUS  mandatory
+        DESCRIPTION
+            "The value specifies the secure erase status of PCIe(NVMe) disk.
+            secureEraseNotSupported(2)
+            Secure erase is not supported so proceeding with Basic Erase"
+        ::= { cpqSePCIeDisk 3 }
 
 -- ****************************************************************************
 --  Standard Equipment MIB Trap Definitions
@@ -5572,15 +5590,15 @@ cpqSeCpuPowerPodstatusChange TRAP-TYPE
                      cpqSeUSBPortDeviceReadErrorCount, cpqSeUSBPortDeviceReadThreshold,
                      cpqSeUSBPortDeviceLastSlotWithError }
         DESCRIPTION
-            "This trap is sent when a read error occured on the attached USB storage device "
+            "This trap is sent when a read error occurred on the attached USB storage device "
 
         --#TYPE "USB storage device read error occurred (1010)"
         --#SUMMARY "A read error occurred on the Flash Media in Slot %d of a USB storage device attached to the system."
         --#ARGUMENTS {10}
-        --#SEVERITY INFORMATIONAL
+        --#SEVERITY MAJOR
         --#TIMEINDEX 99
         --#STATE OPERATIONAL
-        --#SIMPLE_SEVERITY OK
+        --#SIMPLE_SEVERITY MAJOR
         --#HWSTATUS_CATEGORY STORAGE
         --#LIFECYCLE
 
@@ -5594,15 +5612,15 @@ cpqSeCpuPowerPodstatusChange TRAP-TYPE
                      cpqSeUSBPortDeviceWriteErrorCount, cpqSeUSBPortDeviceWriteThreshold,
                      cpqSeUSBPortDeviceLastSlotWithError }
         DESCRIPTION
-            "This trap is sent when a write error occured on the attached USB storage device "
+            "This trap is sent when a write error occurred on the attached USB storage device "
 
         --#TYPE "USB storage device write error occurred (1011)"
         --#SUMMARY "A write error occurred on the Flash Media in Slot %d of a USB storage device attached to the system."
         --#ARGUMENTS {10}
-        --#SEVERITY INFORMATIONAL
+        --#SEVERITY MAJOR
         --#TIMEINDEX 99
         --#STATE OPERATIONAL
-        --#SIMPLE_SEVERITY OK
+        --#SIMPLE_SEVERITY MAJOR
         --#HWSTATUS_CATEGORY STORAGE
         --#LIFECYCLE
 
@@ -5796,5 +5814,60 @@ cpqSeCpuPowerPodstatusChange TRAP-TYPE
 
         ::= 1020
 
+    cpqSeNVMeSecureEraseFailed TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES  { sysName, cpqHoTrapFlags, cpqSePCIeDiskPCIBusIndex,
+                     cpqSePCIeDiskPCIDeviceIndex, cpqSePCIeDiskPCIFunctionIndex,
+                     cpqSePCIeDiskSerialNumber, cpqSePCIeEraseFailureType }
+        
+        DESCRIPTION
+            "Secure Erase of NVMe drive has failed."
+            
+        --#TYPE "Secure Erase of NVMe drive has failed(1021)"
+        --#SUMMARY "Secure Erase of NVMe drive has failed : ( Bus %d, Device %d, Function %d, Serial Number %s, Failure Type %d )"
+        --#ARGUMENTS { 2, 3, 4, 5, 6 }
+        --#SEVERITY CRITICAL
+        --#TIMEINDEX 99
+        --#STATE DEGRADED
+        --#SIMPLE_SEVERIRY CRITICAL
+        --#HWSTATUS_CATEGORY STORAGE
+        --#ACTION "Please refer the IML Troubleshooting guide or click on Learn More link for additional information and any necessary action to be taken."
+        ::= 1021
+                
+    cpqSePcieTrainingFailed TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES { sysName, cpqHoTrapFlags, cpqSePciePhySlot }
+         
+        DESCRIPTION
+             "This trap is sent when a PCI Express slot failed to train."
+             
+        --#TYPE "PCI Express slot failed to train(1022)"
+        --#SUMMARY "PCI Express slot %d failed to train."
+        --#ARGUMENTS {2}
+        --#SEVERITY CRITICAL
+        --#TIMEINDEX 99
+        --#STATE DEGRADED
+        --#SIMPLE_SEVERITY CRITICAL
+        --#HWSTATUS_CATEGORY NETWORK
+         
+        ::= 1022
+        
+    cpqSePciResetFail TRAP-TYPE
+        ENTERPRISE compaq
+        VARIABLES { sysName, cpqHoTrapFlags, cpqSePCCardSlotIndex }
+
+        DESCRIPTION
+            "System is unable to perform a reset on the PCI controller in slot."
+        
+        --#TYPE "Reset operation on PCI controller in slot failed(1023)"
+        --#SUMMARY "Reset operation on PCI controller in slot %d failed."
+        --#ARGUMENTS {2}
+        --#SEVERITY CRITICAL
+        --#TIMEINDEX 99
+        --#STATE DEGRADED
+        --#SIMPLE_SEVERITY CRITICAL
+        --#HWSTATUS_CATEGORY NETWORK
+
+        ::= 1023
 END
 
