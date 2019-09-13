@@ -3,40 +3,68 @@ global:
   evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
 
 scrape_configs:
-  - job_name: 'snmp_exporter_dell'
+  - job_name: 'snmp_exporter_dell_sim'
     scrape_interval: 120s
     scrape_timeout: 30s
     file_sd_configs:
         - files :
-          - /etc/prometheus/dell.yml
-    #static_configs:
-    #  - targets:
-    #    - 123.243.41.168  # SNMP device.
-    # SNMP device.
+          - /etc/prometheus/dell_sim.yml
+
     metrics_path: /snmp
     params:
-      module: [dell] #which OID's we will be querying in
+      module: [dell_sim] #which OID's we will be querying in
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
       - target_label: __address__
         replacement: snmp_exporter:9116  # The SNMP exporter's real hostname:port.
 
-  - job_name: 'snmp_exporter_hpe'
+  - job_name: 'snmp_exporter_hpe_sim'
     scrape_interval: 120s
     scrape_timeout: 30s
     file_sd_configs:
         - files :
-          - /etc/prometheus/hpe.yml
-    # SNMP device.
+          - /etc/prometheus/hpe_sim.yml
     metrics_path: /snmp
     params:
-      module: [hpe] #which OID's we will be querying in
+      module: [hpe_sim] #which OID's we will be querying in
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
       - target_label: __address__
         replacement: snmp_exporter:9116  # The SNMP exporter's real hostname:port.
+
+        
+        #  - job_name: 'snmp_exporter_dell'
+        #    scrape_interval: 120s
+        #    scrape_timeout: 30s
+        #    file_sd_configs:
+        #        - files :
+        #          - /etc/prometheus/dell.yml
+        #    metrics_path: /snmp
+        #    params:
+        #      module: [dell] #which OID's we will be querying in
+        #    relabel_configs:
+        #      - source_labels: [__address__]
+        #        target_label: __param_target
+        #      - target_label: __address__
+        #        replacement: snmp_exporter:9116  # The SNMP exporter's real hostname:port.
+        #
+        #
+        #  - job_name: 'snmp_exporter_hpe'
+        #    scrape_interval: 120s
+        #    scrape_timeout: 30s
+        #    file_sd_configs:
+        #        - files :
+        #          - /etc/prometheus/hpe.yml
+        #    metrics_path: /snmp
+        #    params:
+        #      module: [hpe] #which OID's we will be querying in
+        #    relabel_configs:
+        #      - source_labels: [__address__]
+        #        target_label: __param_target
+        #      - target_label: __address__
+        #        replacement: snmp_exporter:9116  # The SNMP exporter's real hostname:port.
 
 alerting:
   alertmanagers:

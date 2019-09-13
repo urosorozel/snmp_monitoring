@@ -1,0 +1,6 @@
+- targets: ["snmpsim"]
+  labels:
+    env: "dc1"
+    function: "IPMI"
+    device_type: "hp"
+    hostname: "hp-sim-server1"

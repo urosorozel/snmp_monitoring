@@ -9,6 +9,14 @@ services:
       - './snmp_exporter_generator/generator.yml:/opt/generator.yml'
       - './snmp_exporter/:/opt/'
 
+  snmpsim:
+    container_name: snmpsim
+    build: './snmpsim'
+    ports:
+      - "161:161/udp"
+    volumes:
+      - './snmpsim/snmpwalks:/data'
+
   snmp_exporter:
     container_name: snmp_exporter
     image: prom/snmp-exporter

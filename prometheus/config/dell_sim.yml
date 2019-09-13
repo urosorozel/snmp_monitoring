@@ -1,0 +1,7 @@
+- targets: ["snmpsim"]
+  labels:
+    env: "dc1"
+    function: "IPMI"
+    device_type: "dell"
+    hostname: "dell-sim-server1"
+

@@ -1,51 +1,66 @@
 modules:
-  dell:
-    version: 2
-    auth:
-      community: public
+  dell_walk: &dell_walk
     walk:
       - sysUpTime
-      # BIOS stats
-      - 1.3.6.1.4.1.674.10892.5.2 # power state other(1), unknown(2), off(3), on(4)
-      - 1.3.6.1.4.1.674.10892.5.4.300.50.1.5.1.1 # IDRAC-MIB-SMIv2::systemBIOSStatus.1.1
-      - 1.3.6.1.4.1.674.10892.5.4.200 # system state combined
-      - 1.3.6.1.4.1.674.10892.5.4.700.20.1 #temps
-      - 1.3.6.1.4.1.674.10892.5.4.1100.30 # CPU
-      - 1.3.6.1.4.1.674.10892.5.4.1100.50.1.14 # memory
-      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.11 # pysical disk size
-      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.24 # disk status
-      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.7 # disk serial
-      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.55 # disk label
-      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.6 # disk model
-      - 1.3.6.1.4.1.674.10892.5.4.600.12.1 # power supply
-      #- 1.3.6.1.4.1.674.10892.5.4.600.60 # power meter
-      - 1.3.6.1.4.1.674.10892.5.4.600.30.1.6 # power only
-    # this is only allowed when index is uniuq
-    lookups:
-      - old_index: IDRAC-MIB-SMIv2::temperatureProbeIndex #temperatureProbeIndex #1.3.6.1.4.1.674.10892.5.4.700.20.1.2 #temperatureProbeIndex
-      - new_index: IDRAC-MIB-SMIv2::temperatureProbeLocationName.1 #temperatureProbeLocationName #1.3.6.1.4.1.674.10892.5.4.700.20.1.8.1 #temperatureProbeLocationName
-
-    overrides: # Allows for per-module overrides of bits of MIBs
+       # BIOS stats
+      - 1.3.6.1.4.1.674.10892.5.2                   # power state other(1), unknown(2), off(3), on(4)
+      - 1.3.6.1.4.1.674.10892.5.4.300.50.1.5.1.1    # IDRAC-MIB-SMIv2::systemBIOSStatus.1.1
+      - 1.3.6.1.4.1.674.10892.5.4.200               # system state combined
+      - 1.3.6.1.4.1.674.10892.5.4.700.20.1          # temperatures
+      - 1.3.6.1.4.1.674.10892.5.4.1100.30           # CPU
+      - 1.3.6.1.4.1.674.10892.5.4.1100.50.1.14      # memory
+      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.11   # pysical disk size
+      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.24   # disk status
+      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.7    # disk serial
+      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.55   # disk label
+      - 1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.6    # disk model
+      - 1.3.6.1.4.1.674.10892.5.4.600.12.1          # power supply
+      - 1.3.6.1.4.1.674.10892.5.4.600.30.1.6        # power only
+    overrides:
       temperatureProbeLocationName:
         type: DisplayString
 
-  hpe:
+  dell_sim:
+    <<: *dell_walk
+    version: 2
+    auth:
+      community: dell_r740xd
+
+  dell:
+    <<: *dell_walk
     version: 2
     auth:
       community: public
+
+  hpe_walk: &hpe_walk
     walk:
       - sysUpTime
-      # BIOS status
-      #- CPQHLTH-MIB::cpqHeHWBiosCondition.0
-      - 1.3.6.1.4.1.232.9.2.2.32 # power state
-      - 1.3.6.1.4.1.232.6.2.16 # BIOS state
-      - 1.3.6.1.4.1.232.6.2.6.8.1 # temp
-      #- 1.3.6.1.4.1.232.6.2.6.7.1 # fans
-      - 1.3.6.1.4.1.232.1.2.2.1.1 # CPU
-      #- 1.3.6.1.4.1.232.3.2.3.1.1 # logical drives
-      - 1.3.6.1.4.1.232.3.2.5.1.1 # drives
-      - 1.3.6.1.4.1.232.6.2.14.13.1.6 # Memory size only
-      - 1.3.6.1.4.1.232.6.2.9 # power supply
-      - 1.3.6.1.4.1.232.6.2.15 # power meter
-      #- 1.3.6.1.4.1.232.11.2.14 # firmware version
+      - 1.3.6.1.4.1.232.9.2.2            # ILO module
+      - 1.3.6.1.4.1.232.6.2.16           # BIOS state
+      - 1.3.6.1.4.1.232.6.2.6.8.1        # Temperatures
+      #- 1.3.6.1.4.1.232.6.2.6.7.1       # Fans
+      - 1.3.6.1.4.1.232.1.2.2.1.1        # CPU
+      - 1.3.6.1.4.1.232.3.2.3.1.1       # Logical drives
+      - 1.3.6.1.4.1.232.3.2.5.1.1        # Physical drives
+      - 1.3.6.1.4.1.232.6.2.14.13.1.6    # Memory size only
+      - 1.3.6.1.4.1.232.6.2.9            # Power supply
+      - 1.3.6.1.4.1.232.6.2.15           # Power meter
+      - 1.3.6.1.4.1.232.5                # Asmd agent scsi disks
+      - 1.3.6.1.4.1.232.6.2.17           # RAID controller battery
+      - 1.3.6.1.4.1.232.14               # Asmd agent ide/sata
+      - 1.3.6.1.4.1.232.11               # Firmware version
+      - 1.3.6.1.4.1.232.3.2.2.1          # RAID storage controller
+    overrides:
+      cpqHeTemperatureLocale:
+        type: EnumAsInfo
+  hpe_sim:
+    <<: *hpe_walk
+    version: 2
+    auth:
+      community: hp_dl380_g10
 
+  hpe:
+    <<: *hpe_walk
+    version: 2
+    auth:
+      community: public
